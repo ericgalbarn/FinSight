@@ -1,10 +1,10 @@
-import CompanyCard from "./Components/Card/CompanyCard";
 import "./App.css";
+import CardList from "./Components/CardList/CardList";
 
 function App() {
   return (
     <>
-      <CompanyCard></CompanyCard>
+      <CardList />
     </>
   );
 }
