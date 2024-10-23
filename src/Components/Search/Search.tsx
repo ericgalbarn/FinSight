@@ -8,8 +8,13 @@ type Props = {};
 
 const Search: React.FC<Props> = (props: Props): JSX.Element => {
   const [search, setSearch] = useState<string>("");
-  const onClick = (e: any) => {
+
+  const handleChange = (e: React.ChangeEvent<FormControlElement>) => {
     setSearch(e.target.value);
+    console.log(e);
+  };
+
+  const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.log(e);
   };
   return (
@@ -19,12 +24,14 @@ const Search: React.FC<Props> = (props: Props): JSX.Element => {
           type="text"
           placeholder="Search"
           value={search}
-          onChange={(e) => onClick(e)}
+          onChange={(e) => handleChange(e)}
           className=" mr-sm-2"
         />
       </Col>
       <Col xs="auto">
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={(e) => onClick(e)}>
+          Submit
+        </Button>
       </Col>
     </Row>
   );
