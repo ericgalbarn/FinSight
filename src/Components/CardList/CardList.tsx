@@ -2,7 +2,7 @@ import CompanyCard from "../Card/CompanyCard";
 
 interface Props {}
 
-const CardList = (props: Props) => {
+const CardList: React.FC<Props> = (props: Props): JSX.Element => {
   return (
     <div>
       <CompanyCard companyName="Apple" ticker="AAPL" price={100} />
