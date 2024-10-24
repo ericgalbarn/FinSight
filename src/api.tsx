@@ -4,10 +4,12 @@ interface SearchResponse {
   data: CompanySearch[];
 }
 
+const api_key = import.meta.env.VITE_API_KEY;
+
 export const searchCompanies = async (query: string) => {
   try {
     const data = await axios.get<SearchResponse>(
-      `https://financialmodelingprep.com/api/v3/search-ticker?query=AA&limit=10&exchange=NASDAQ&apikey=hn7bwx1RAtEfCuKbMHUPAVZs5qw3BkjY`
+      `https://financialmodelingprep.com/api/v3/search-ticker?query=${query}&limit=10&exchange=NASDAQ&apikey=${api_key}`
     );
     return data;
   } catch (error) {
