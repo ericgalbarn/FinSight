@@ -4,19 +4,17 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-type Props = {};
+interface Props {
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  search: string | undefined;
+  handleChange: (e: React.ChangeEvent<FormControlElement>) => void;
+}
 
-const Search: React.FC<Props> = (props: Props): JSX.Element => {
-  const [search, setSearch] = useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<FormControlElement>) => {
-    setSearch(e.target.value);
-    console.log(e);
-  };
-
-  const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log(e);
-  };
+const Search: React.FC<Props> = ({
+  onClick,
+  search,
+  handleChange,
+}: Props): JSX.Element => {
   return (
     <Row>
       <Col xs="auto">
