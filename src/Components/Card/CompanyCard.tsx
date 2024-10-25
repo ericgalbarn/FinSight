@@ -1,27 +1,27 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { CompanySearch } from "../../company";
 
 interface Props {
-  companyName: string;
-  ticker: string;
-  price: number;
+  id: string;
+  searchResult: CompanySearch;
 }
 
 const CompanyCard: React.FC<Props> = ({
-  companyName,
-  ticker,
-  price,
+  id,
+  searchResult,
 }: Props): JSX.Element => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img
-        variant="top"
-        src="https://images.unsplash.com/photo-1728144691773-544f5c5577f6?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
+      <Card.Img variant="top" alt="Company Logo" />
       <Card.Body>
-        <Card.Title>{companyName}</Card.Title>
-        <Card.Text>{price}</Card.Text>
-        <Card.Text>{ticker}</Card.Text>
+        <Card.Title>
+          ({searchResult.name}) ({searchResult.symbol})
+        </Card.Title>
+        <Card.Text>{searchResult.currency}</Card.Text>
+        <Card.Text>
+          ({searchResult.exchangeShortName}) - ({searchResult.stockExchange})
+        </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
