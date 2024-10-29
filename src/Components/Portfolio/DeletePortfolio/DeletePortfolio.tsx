@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 interface Props {
   onPortfolioDelete: (e: React.SyntheticEvent) => void;
@@ -10,10 +8,16 @@ interface Props {
 const DeletePortfolio = ({ onPortfolioDelete, portfolioValue }: Props) => {
   return (
     <div>
-      <Form onSubmit={onPortfolioDelete}>
-        <Form.Control hidden={true} value={portfolioValue} />
-        <Button type="submit">X</Button>
-      </Form>
+      <form onSubmit={onPortfolioDelete}>
+        <input
+          className="input w-full max-w-xs"
+          hidden={true}
+          value={portfolioValue}
+        />
+        <button className="btn btn-accent" type="submit">
+          X
+        </button>
+      </form>
     </div>
   );
 };

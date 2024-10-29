@@ -1,5 +1,4 @@
 import React, { SyntheticEvent, useState } from "react";
-import Form from "react-bootstrap/Form";
 
 interface Props {
   onSearchSubmit: (e: SyntheticEvent) => void;
@@ -13,15 +12,15 @@ const Search: React.FC<Props> = ({
   handleSearchChange,
 }: Props): JSX.Element => {
   return (
-    <Form onSubmit={onSearchSubmit}>
-      <Form.Control
+    <form onSubmit={onSearchSubmit}>
+      <input
         type="text"
         placeholder="Search"
         value={search}
         onChange={handleSearchChange}
-        className=" mr-sm-2"
+        className="input input-bordered w-full max-w-xs"
       />
-    </Form>
+    </form>
   );
 };
 

@@ -1,6 +1,4 @@
 import { SyntheticEvent } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 interface Props {
   onPortfolioCreate: (e: SyntheticEvent) => void;
@@ -9,14 +7,17 @@ interface Props {
 
 const AddPortfolio = ({ onPortfolioCreate, symbol }: Props) => {
   return (
-    <Form onSubmit={onPortfolioCreate}>
-      <Form.Group className="mb-3">
-        <Form.Control readOnly={true} hidden={true} value={symbol} />
-      </Form.Group>
-      <Button variant="primary" type="submit">
+    <form onSubmit={onPortfolioCreate}>
+      <input
+        readOnly={true}
+        hidden={true}
+        value={symbol}
+        className="input w-full max-w-xs"
+      />
+      <button className="btn btn-active btn-accent" type="submit">
         Add
-      </Button>
-    </Form>
+      </button>
+    </form>
   );
 };
 
