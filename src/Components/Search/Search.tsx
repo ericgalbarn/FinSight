@@ -12,15 +12,22 @@ const Search: React.FC<Props> = ({
   handleSearchChange,
 }: Props): JSX.Element => {
   return (
-    <form onSubmit={onSearchSubmit}>
-      <input
-        type="text"
-        placeholder="Search"
-        value={search}
-        onChange={handleSearchChange}
-        className="input input-bordered w-full max-w-xs"
-      />
-    </form>
+    <section className="relative ">
+      <div className="max-w-4xl mx-auto p-6 space-y-6">
+        <form
+          className="form relative flex flex-col w-full p-10 space-y-4 bg-transparent rounded-lg md:flex-row md:space-y-0 md:space-x-3"
+          onSubmit={onSearchSubmit}
+        >
+          <input
+            className="flex-1 p-3 border-2 rounded-lg placeholder-white text-white focus:outline-none"
+            id="search-input"
+            placeholder="Search companies"
+            value={search}
+            onChange={handleSearchChange}
+          ></input>
+        </form>
+      </div>
+    </section>
   );
 };
 

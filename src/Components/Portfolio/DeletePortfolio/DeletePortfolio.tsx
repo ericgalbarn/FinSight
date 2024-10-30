@@ -14,7 +14,7 @@ const DeletePortfolio = ({ onPortfolioDelete, portfolioValue }: Props) => {
           hidden={true}
           value={portfolioValue}
         />
-        <button className="btn btn-accent" type="submit">
+        <button className="btn btn-error" type="submit">
           X
         </button>
       </form>
