@@ -8,6 +8,7 @@ import {
   CompanyKeyRatios,
   CompanyProfile,
   CompanySearch,
+  CompanyTenK,
 } from "./company";
 interface SearchResponse {
   data: CompanySearch[];
@@ -91,6 +92,17 @@ export const getCompData = async (query: string) => {
   try {
     const data = await axios.get<CompanyCompData[]>(
       `https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=${api_key}`
+    );
+    return data;
+  } catch (error: any) {
+    console.log("Error message from API: ", error.message);
+  }
+};
+
+export const getTenK = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyTenK[]>(
+      `https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-k&page=0&apikey=${api_key}`
     );
     return data;
   } catch (error: any) {
