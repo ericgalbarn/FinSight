@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   CompanyBalanceSheet,
   CompanyCashFlow,
+  CompanyCompData,
   CompanyIncomeStatement,
   CompanyKeyMetrics,
   CompanyKeyRatios,
@@ -79,6 +80,17 @@ export const getCashFlowStatement = async (query: string) => {
   try {
     const data = await axios.get<CompanyCashFlow[]>(
       `https://financialmodelingprep.com/api/v3/cash-flow-statement/${query}?period=annual&apikey=${api_key}`
+    );
+    return data;
+  } catch (error: any) {
+    console.log("Error message from API: ", error.message);
+  }
+};
+
+export const getCompData = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyCompData[]>(
+      `https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=${api_key}`
     );
     return data;
   } catch (error: any) {
