@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCompData } from "../../api";
 import { CompanyCompData } from "../../company";
 import CompFinderItem from "./CompFinderItem/CompFinderItem";

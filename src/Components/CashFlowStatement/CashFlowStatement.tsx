@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CompanyCashFlow } from "../../company";
 import { useOutletContext } from "react-router";
 import { getCashFlowStatement } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinner/Spinner";
 import { formatLargeMonetaryNumber } from "../../Helper/NumberFormatting";
-
-interface Props {}
 
 const config = [
   {
@@ -52,7 +50,7 @@ const config = [
   },
 ];
 
-const CashFlowStatement = (props: Props) => {
+const CashFlowStatement = () => {
   const ticker = useOutletContext<string>();
   const [cashFlowData, setCashFlowData] = useState<CompanyCashFlow[]>();
   useEffect(() => {

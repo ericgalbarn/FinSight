@@ -1,10 +1,16 @@
+type RatioConfig = {
+  label: React.ReactNode;
+  subTitle?: string;
+  render: (data: any) => React.ReactNode;
+};
+
 type Props = {
-  config: any;
+  config: RatioConfig[];
   data: any;
 };
 
 const RatioList = ({ config, data }: Props) => {
-  const renderedRows = config.map((row) => {
+  const renderedRows = config.map((row: RatioConfig) => {
     return (
       <li className="py-3 sm:py-4">
         <div className="flex items-center space-x-4">

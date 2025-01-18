@@ -316,7 +316,7 @@ export interface CompanyCompData {
 
 export interface CompanyTenK {
   symbol: string;
-  filllingDate: string;
+  fillingDate: string;
   acceptedDate: string;
   cik: string;
   type: string;

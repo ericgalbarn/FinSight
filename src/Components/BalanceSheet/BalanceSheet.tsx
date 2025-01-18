@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CompanyBalanceSheet } from "../../company";
 import { useOutletContext } from "react-router";
 import { getBalanceSheet } from "../../api";
 import RatioList from "../RatioList/RatioList";
 import Spinner from "../Spinner/Spinner";
 import { formatLargeMonetaryNumber } from "../../Helper/NumberFormatting";
-
-interface Props {}
 
 const config = [
   {
@@ -76,16 +74,18 @@ const config = [
   },
 ];
 
-const BalanceSheet = (props: Props) => {
+const BalanceSheet = () => {
   const ticker = useOutletContext<string>();
-  const [balanceSheet, setBalanceSheet] = useState<CompanyBalanceSheet[]>();
+  const [balanceSheet, setBalanceSheet] = useState<CompanyBalanceSheet>();
+
   useEffect(() => {
     const getData = async () => {
       const value = await getBalanceSheet(ticker!);
+      // Assuming value.data[0] is a single CompanyBalanceSheet object
       setBalanceSheet(value?.data[0]);
     };
     getData();
-  }, []);
+  }, [ticker]);
   return (
     <>
       {balanceSheet ? (

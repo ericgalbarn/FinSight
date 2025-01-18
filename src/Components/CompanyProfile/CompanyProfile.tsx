@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CompanyKeyMetrics } from "../../company";
 import { useOutletContext } from "react-router";
 import { getKeyMetrics } from "../../api";
@@ -8,8 +8,6 @@ import {
   formatLargeNonMonetaryNumber,
   formatRatio,
 } from "../../Helper/NumberFormatting";
-
-interface Props {}
 
 const tableConfig = [
   {
@@ -80,7 +78,7 @@ const tableConfig = [
   },
 ];
 
-const CompanyProfile = (props: Props) => {
+const CompanyProfile = () => {
   const ticker = useOutletContext<string>();
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {

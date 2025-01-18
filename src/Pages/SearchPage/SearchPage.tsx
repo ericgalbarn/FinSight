@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import Navbar from "../../Components/Navbar/Navbar";
 import Search from "../../Components/Search/Search";
 import ListPortfolio from "../../Components/Portfolio/ListPortfolio/ListPortfolio";
 import CardList from "../../Components/CardList/CardList";
 import { CompanySearch } from "../../company";
 import { searchCompanies } from "../../api";
 
-interface Props {}
-
-const SearchPage = (props: Props) => {
+const SearchPage = () => {
   const [search, setSearch] = useState<string>("");
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
   const [serverError, setServerError] = useState<string>("");
 
-  const handleSearchChange = (e: React.ChangeEvent<FormControlElement>) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     console.log(e);
   };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { CompanyIncomeStatement } from "../../company";
 import { getIncomeStatement } from "../../api";
@@ -8,8 +8,6 @@ import {
   formatLargeMonetaryNumber,
   formatRatio,
 } from "../../Helper/NumberFormatting";
-
-interface Props {}
 
 const configs = [
   {
@@ -77,7 +75,7 @@ const configs = [
   },
 ];
 
-const IncomeStatement = (props: Props) => {
+const IncomeStatement = () => {
   const ticker = useOutletContext<string>();
   const [incomeStatement, setIncomeStatement] =
     useState<CompanyIncomeStatement[]>();

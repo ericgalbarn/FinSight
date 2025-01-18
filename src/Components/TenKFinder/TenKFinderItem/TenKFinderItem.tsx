@@ -1,4 +1,3 @@
-import React from "react";
 import { CompanyTenK } from "../../../company";
 import { Link } from "react-router-dom";
 

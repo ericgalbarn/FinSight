@@ -5,7 +5,6 @@ import {
   CompanyCompData,
   CompanyIncomeStatement,
   CompanyKeyMetrics,
-  CompanyKeyRatios,
   CompanyProfile,
   CompanySearch,
   CompanyTenK,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { CompanyProfile } from "../../company";
 import { getCompanyProfile } from "../../api";
@@ -9,11 +9,9 @@ import Spinner from "../../Components/Spinner/Spinner";
 import CompFinder from "../../Components/CompFinder/CompFinder";
 import TenKFinder from "../../Components/TenKFinder/TenKFinder";
 
-interface Props {}
-
-const CompanyPage = (props: Props) => {
+const CompanyPage = () => {
   // https://localhost:3000/
-  let { ticker } = useParams();
+  const { ticker } = useParams();
   const [company, setCompany] = useState<CompanyProfile>();
 
   useEffect(() => {

@@ -1,10 +1,7 @@
-import React from "react";
 import Table from "../../Components/Table/Table";
 import RatioList from "../../Components/RatioList/RatioList";
 import { CompanyKeyMetrics } from "../../company";
 import { testIncomeStatementData } from "../../Components/Table/testData";
-
-interface Props {}
 
 const tableConfig = [
   {
@@ -14,7 +11,7 @@ const tableConfig = [
   },
 ];
 
-const DesignPage = (props: Props) => {
+const DesignPage = () => {
   return (
     <>
       <h1>FinSight Design Page</h1>
